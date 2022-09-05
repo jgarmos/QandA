@@ -9,7 +9,7 @@ interface Props {
   data: QuestionData[];
 }
 
-export const QuestionList: FC<Props> = ( { data }) => (
+export const QuestionList: FC<Props> = ( { data}) => (
   <ul
     css={css`
       list-style: none;
