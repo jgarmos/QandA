@@ -38,11 +38,18 @@ namespace QandA.Controllers
         public ActionResult<QuestionGetSingleResponse> GetQuestion(int questionId)
         {
             var question = _dataRepository.GetQuestion(questionId);
-            if(question == null)
+            if (question == null)
             {
                 return NotFound();
             }
             return question;
+        }
+        
+        [HttpPost]
+        public ActionResult<QuestionGetSingleResponse> PostQuestion(QuestionPostRequest questionPostRequest)
+        {
+            var savedQuestion = _dataRepository.PostQuestion(questionPostRequest);
+            return CreatedAtAction(nameof(GetQuestion), new { questionId = savedQuestion.QuestionId }, savedQuestion);
         }
     }
 }
