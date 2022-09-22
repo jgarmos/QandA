@@ -36,7 +36,7 @@ namespace QandA
 
             //Scripts
 
-            services.AddRazorPages();
+            services.AddControllers();
 
             //register classes for depnedency injection
             services.AddScoped<IDataRepository, DataRepository>();
@@ -66,7 +66,7 @@ namespace QandA
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
