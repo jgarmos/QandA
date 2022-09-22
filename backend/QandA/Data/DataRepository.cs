@@ -84,7 +84,7 @@ namespace QandA.Data
 
         public QuestionGetSingleResponse PostQuestion (QuestionPostRequest question)
         {
-            using (var connection = new SqlConnection())
+            using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
                 var questionId = connection.QueryFirst<int>(
