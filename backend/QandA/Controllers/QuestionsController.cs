@@ -66,5 +66,16 @@ namespace QandA.Controllers
             return _dataRepository.PutQuestion(questionId, questionPutRequest);
         }
 
+        [HttpDelete("{questionId}")]
+        public ActionResult DeleteQuestion (int questionId)
+        {
+            var question = _dataRepository.GetQuestion(questionId);
+            if (question == null)
+            {
+                return NotFound();
+            }
+            _dataRepository.DeleteQuestion(questionId);
+            return NoContent();
+        }
     }
 }
