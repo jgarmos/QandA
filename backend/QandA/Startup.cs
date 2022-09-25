@@ -38,6 +38,9 @@ namespace QandA
 
             services.AddControllers();
 
+            // Register the Swagger services
+            services.AddSwaggerDocument();
+
             //register classes for depnedency injection
             services.AddScoped<IDataRepository, DataRepository>();
         }
@@ -59,6 +62,10 @@ namespace QandA
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // Register the Swagger generator and the Swagger UI middlewares
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseRouting();
 
