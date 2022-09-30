@@ -19,6 +19,11 @@ export const HomePage = () => {
     };
     doGetUnansweredQuestions();
   }, []);
+
+  const hadleAskQuestionClick = () => {
+    console.log('test2');
+  };
+
   return (
     <Page>
       <div
@@ -29,7 +34,9 @@ export const HomePage = () => {
         `}
       >
         <PageTitle>Unanswered Questions</PageTitle>
-        <PrimaryButton>Ask a question</PrimaryButton>
+        <PrimaryButton onClick={hadleAskQuestionClick}>
+          Ask a question
+        </PrimaryButton>
       </div>
       {questionsLoading ? (
         <div
