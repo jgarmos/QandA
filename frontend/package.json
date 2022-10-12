@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@aspnet/signalr": "^3.0.0-preview6.19307.2",
+    "@auth0/auth0-spa-js": "^1.22.4",
     "@emotion/styled": "^11.10.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
