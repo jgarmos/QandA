@@ -5,7 +5,8 @@ import { QuestionList } from './QuestionList';
 import { getUnansweredQuestions, QuestionData } from './QuestionsData';
 import { Page } from './Page';
 import { PageTitle } from './PageTitle';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const HomePage = () => {
   const [questions, setQuestions] = useState<QuestionData[] | null>(null);
@@ -20,8 +21,9 @@ export const HomePage = () => {
     doGetUnansweredQuestions();
   }, []);
 
+  const navigate = useNavigate();
   const hadleAskQuestionClick = () => {
-    console.log('test2');
+    navigate('ask');
   };
 
   return (
